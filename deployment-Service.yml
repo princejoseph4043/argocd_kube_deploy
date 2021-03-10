@@ -51,4 +51,4 @@ spec:
       volumes:
         - name: config-volume
           configMap:
-            name: nginx-config-v1-142
+            name: nginx-config-v1-143
