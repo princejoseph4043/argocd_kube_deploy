@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: sample-nodejs
-          image: 897585983198.dkr.ecr.us-east-1.amazonaws.com/sample-nodejs:v1-155
+          image: 897585983198.dkr.ecr.us-east-1.amazonaws.com/sample-nodejs:v1-156
           ports:
           - containerPort: 8080
           env:
@@ -51,4 +51,4 @@ spec:
       volumes:
         - name: config-volume
           configMap:
-            name: nginx-config-v1-155
+            name: nginx-config-v1-156
