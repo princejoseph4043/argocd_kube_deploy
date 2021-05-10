@@ -21,7 +21,7 @@ pipeline {
             }
                 slackSend channel: '#jenkins-build',
                           color: '#0000FF',
-                    message: "Build Started: job Name: ${env.JOB_NAME}\n Initaited by ${BUILD_USER}\n Build Number: ${env.BUILD_NUMBER}\n Git Branch: ${env.GIT_BRANCH}\n Git commit ID: ${env.GIT_COMMIT}\n More info at: (<${env.BUILD_URL}|Open>)"
+                    message: "Build Started: job Name:\n ${env.JOB_NAME}\n Initaited by ${BUILD_USER}\n Build Number: ${env.BUILD_NUMBER}\n Git Branch: ${env.GIT_BRANCH}\n Git commit ID: ${env.GIT_COMMIT}\n More info at: (<${env.BUILD_URL}|Open>)"
             }
         }
             
