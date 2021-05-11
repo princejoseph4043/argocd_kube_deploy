@@ -29,7 +29,6 @@ pipeline {
             steps {
                 sh '''
                 echo "hi prince"
-                hello prince
                 '''
             }
         }
