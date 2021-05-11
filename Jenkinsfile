@@ -44,7 +44,7 @@ pipeline {
             echo 'I will always say hello in the console.'
             slackSend channel: '#jenkins-build',
                 color: COLOR_MAP[currentBuild.currentResult],
-                message: "*${currentBuild.currentResult}:* Job ${env.JOB_NAME} build ${env.BUILD_NUMBER} by ${BUILD_USER}\n More info at: ${env.BUILD_URL}"
+                message: "*${currentBuild.currentResult}:* Job Name: ${env.JOB_NAME}\n Initaited By: ${BUILD_USER}\n Build Number: ${env.BUILD_NUMBER}\n Git Branch: ${env.GIT_BRANCH}\n Git commit ID: ${env.GIT_COMMIT}\n  More info at: ${env.BUILD_URL}"
         }
     }
 }
