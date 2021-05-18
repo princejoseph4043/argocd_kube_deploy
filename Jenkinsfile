@@ -28,7 +28,7 @@ pipeline {
         stage('Build steps'){
             steps {
                 sh '''
-                echo "hi prince
+                echo "hi prince"
                 '''
             }
         }
