@@ -40,6 +40,7 @@ pipeline {
             steps {
                 sh '''
                 echo "Docker Image Push"
+                hello failed
                 '''
                 slackSend channel: '#jenkins-build',
                 color: COLOR_MAP[currentBuild.currentResult],
