@@ -30,6 +30,9 @@ pipeline {
                 sh '''
                 echo "hi prince"
                 '''
+                slackSend channel: '#jenkins-build',
+                color: COLOR_MAP[currentBuild.currentResult],
+                message: "Docker image created"
             }
         }
 
