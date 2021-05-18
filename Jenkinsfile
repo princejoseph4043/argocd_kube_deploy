@@ -25,14 +25,25 @@ pipeline {
             }
         }
             
-        stage('Build steps'){
+        stage('Docker Image Build'){
             steps {
                 sh '''
-                echo "hi prince"
+                echo "Docker Image Build"
                 '''
                 slackSend channel: '#jenkins-build',
                 color: COLOR_MAP[currentBuild.currentResult],
                 message: "Docker image created"
+            }
+        }
+        
+         stage('Docker Image Push'){
+            steps {
+                sh '''
+                echo "Docker Image Push"
+                '''
+                slackSend channel: '#jenkins-build',
+                color: COLOR_MAP[currentBuild.currentResult],
+                message: "Docker pushed to ECR Successfull"
             }
         }
 
