@@ -37,7 +37,7 @@ pipeline {
                 success {
                 slackSend channel: '#jenkins-build',
                 color: COLOR_MAP[currentBuild.currentResult],
-                message: "Docker pushed to ECR Successfull"
+                message: "Docker Image Build Successfull"
                 }
                 // triggered when red sign
                 failure {
