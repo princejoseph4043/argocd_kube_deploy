@@ -40,6 +40,7 @@ pipeline {
             steps {
                 sh '''
                 echo "Docker Image Push"
+                hello prince
                 '''
                 }
                 post {
@@ -51,7 +52,7 @@ pipeline {
                 // triggered when red sign
                 failure {
                 slackSend channel: '#jenkins-build',
-                message: "Docker pushed to ECR Successfull"
+                message: "Docker pushed to ECR Failed"
                 }
                 }
         }
