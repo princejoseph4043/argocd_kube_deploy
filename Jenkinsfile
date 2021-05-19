@@ -41,6 +41,7 @@ pipeline {
                 sh '''
                 echo "Docker Image Push"
                 '''
+                }
                 post {
                 // only triggered when blue or green sign
                 success {
@@ -53,7 +54,6 @@ pipeline {
                 message: "Docker pushed to ECR Successfull"
                 }
                 }
-            }
         }
 
     }
