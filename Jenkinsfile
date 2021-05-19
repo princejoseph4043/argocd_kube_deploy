@@ -30,31 +30,46 @@ pipeline {
                 sh '''
                 echo "Docker Image Build"
                 '''
+            }
+
+                post {
+                // only triggered when blue or green sign
+                success {
                 slackSend channel: '#jenkins-build',
                 color: COLOR_MAP[currentBuild.currentResult],
-                message: "Docker image created"
-            }
+                message: "Docker pushed to ECR Successfull"
+                }
+                // triggered when red sign
+                failure {
+                slackSend channel: '#jenkins-build',
+                color: COLOR_MAP[currentBuild.currentResult],
+                message: "Docker pushed to ECR Successfull"
+                }
+                }
+
         }
         
          stage('Docker Image Push'){
             steps {
                 sh '''
                 echo "Docker Image Push"
-                hello prince
                 '''
-                }
+            }
                 post {
                 // only triggered when blue or green sign
                 success {
                 slackSend channel: '#jenkins-build',
+                color: COLOR_MAP[currentBuild.currentResult],
                 message: "Docker pushed to ECR Successfull"
                 }
                 // triggered when red sign
                 failure {
                 slackSend channel: '#jenkins-build',
-                message: "Docker pushed to ECR Failed"
+                color: COLOR_MAP[currentBuild.currentResult],
+                message: "Docker pushed to ECR Successfull"
                 }
                 }
+            
         }
 
     }
