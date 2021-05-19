@@ -53,7 +53,6 @@ pipeline {
             steps {
                 sh '''
                 echo "Docker Image Push"
-                hello prince
                 '''
             }
                 post {
