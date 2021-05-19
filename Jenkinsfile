@@ -43,7 +43,7 @@ pipeline {
                 failure {
                 slackSend channel: '#jenkins-build',
                 color: COLOR_MAP[currentBuild.currentResult],
-                message: "Docker pushed to ECR Successfull"
+                message: "Docker Image Build Failed"
                 }
                 }
 
@@ -66,7 +66,7 @@ pipeline {
                 failure {
                 slackSend channel: '#jenkins-build',
                 color: COLOR_MAP[currentBuild.currentResult],
-                message: "Docker pushed to ECR Successfull"
+                message: "Docker pushed to ECR failed"
                 }
                 }
             
