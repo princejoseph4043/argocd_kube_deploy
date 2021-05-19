@@ -40,11 +40,19 @@ pipeline {
             steps {
                 sh '''
                 echo "Docker Image Push"
-                hello failed
                 '''
+                post {
+                // only triggered when blue or green sign
+                success {
                 slackSend channel: '#jenkins-build',
-                color: COLOR_MAP[currentBuild.currentResult],
                 message: "Docker pushed to ECR Successfull"
+                }
+                // triggered when red sign
+                failure {
+                slackSend channel: '#jenkins-build',
+                message: "Docker pushed to ECR Successfull"
+                }
+                }
             }
         }
 
